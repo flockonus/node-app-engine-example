@@ -17,9 +17,11 @@ gcloud app deploy
 gcloud app browse
 ```
 
+App engine also comes with [a few env vars](https://cloud.google.com/appengine/docs/standard/nodejs/runtime#environment_variables) including `PORT` and `NODE_ENV=production`.
 
 ## links
 
+- Multiple services under node.js: https://cloud.google.com/appengine/docs/standard/nodejs/configuration-files
 - Tutorial Reference: https://cloud.google.com/nodejs/getting-started/hello-world
 - On [environment variables](https://cloud.google.com/appengine/docs/flexible/nodejs/runtime#environment_variables) + [stack overflow suggestion](https://stackoverflow.com/questions/22669528/securely-storing-environment-variables-in-gae-with-app-yaml)
 

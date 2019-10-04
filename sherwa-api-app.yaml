@@ -1,0 +1,18 @@
+# this can include secrets on a file that we don't commit
+includes:
+  - env_variables.yaml
+
+# AUTO SCALING
+automatic_scaling:
+  max_num_instances: 3
+#   min_num_instances: 1 # note that 0 is not an option
+
+# if chosing manual scale
+# manual_scaling:
+  # instances: 1
+
+# specify Node version in package.json -- https://cloud.google.com/appengine/docs/flexible/nodejs/runtime
+runtime: nodejs
+env: flex
+# The name of the "app"
+service: sherwa-api

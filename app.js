@@ -34,19 +34,22 @@ app.get('/env', (req, res) => {
 
 // SOOOOPER not safe for production!
 app.get('/env/:key', (req, res) => {
-    res.send({[req.params.key]: process.env[req.params.key]});
+  res.send({ [req.params.key]: process.env[req.params.key] });
 });
 
 app.get('/slow/:delay', (req, res) => {
-    const start = Date.now();
-    const delay = parseInt(req.params.delay, 10);
-    let dummy = 0.001;
-    while(Date.now() < start + delay * 1000) {
-        // a dummy op to stall
-        dummy += Math.random() - 0.5;
-    }
-    res.send(`kiki:${dummy}`);
-  });
+  const start = Date.now();
+  const delay = parseInt(req.params.delay, 10);
+  // put a limit to not break the server
+  if (delay > 30) delay = 30;
+  let dummy = 0.001;
+  while (Date.now() < start + delay * 1000) {
+    // a dummy op to stall
+    dummy += Math.random() - 0.5;
+  }
+  console.log('dummy', dummy);
+  res.send(`done wating:${delay}`);
+});
 
 // Start the server
 const PORT = process.env.PORT || 8080;
