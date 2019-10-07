@@ -21,7 +21,7 @@ var morgan = require('morgan')
 
 const app = express();
 
-app.use(morgan('dev'));
+app.use(morgan('tiny'));
 
 app.get('/', (req, res) => {
   res.send('Hello, world!');

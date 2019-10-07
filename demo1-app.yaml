@@ -5,14 +5,15 @@ includes:
 # AUTO SCALING
 automatic_scaling:
   max_num_instances: 3
-#   min_num_instances: 1 # note that 0 is not an option
+  min_num_instances: 1 # note that 0 is not an option
 
 # if chosing manual scale
 # manual_scaling:
-  # instances: 1
+#   instances: 1
 
 # specify Node version in package.json -- https://cloud.google.com/appengine/docs/flexible/nodejs/runtime
 runtime: nodejs
 env: flex
-# The name of the "app"
-service: sherwa-api
+
+# The name of the server/app
+service: demo1
