@@ -24,7 +24,7 @@ const app = express();
 app.use(morgan('tiny'));
 
 app.get('/', (req, res) => {
-  res.send('Hello, world!');
+  res.send('Hello, world! v1');
 });
 
 // 149% not safe for production
@@ -32,9 +32,15 @@ app.get('/env', (req, res) => {
   res.send(process.env);
 });
 
-// SOOOOPER not safe for production!
-app.get('/env/:key', (req, res) => {
-  res.send({ [req.params.key]: process.env[req.params.key] });
+app.get('/error', (req,res)=> {
+  // throws critical error
+  this.asdasdasdasdaD()
+});
+
+app.get('/die', (req,res)=> {
+  // throws critical error
+  console.error('simulating app exploding 💥');
+  process.exit(1);
 });
 
 app.get('/slow/:delay', (req, res) => {

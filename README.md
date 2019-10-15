@@ -1,18 +1,18 @@
 # Deployment step by step
 
 ```
-install gcloud
+# install gcloud: https://cloud.google.com/sdk/docs/quickstart-macos
 
 gcloud auth login < YOUR EMAIL >
 
 -- sets the project once and don't worry about it again
 gcloud config set project sherwa-staging
 
+# only 1 time per GC project (select region us-west2)
 gcloud app create
-(select region us-west2)
 
 -- make sure app.yaml is present, and env_variables.yaml is configured and correct
-gcloud app deploy sherwa-api-app.yaml
+gcloud app deploy demo1-app.yaml
 
 gcloud app browse
 ```
